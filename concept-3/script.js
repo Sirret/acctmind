@@ -66,4 +66,35 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+
+  // Video testimonial carousels
+  document.querySelectorAll('.testi-carousel').forEach(function (carousel) {
+    var track = carousel.querySelector('.testi-track');
+    var prev = carousel.querySelector('.testi-nav.prev');
+    var next = carousel.querySelector('.testi-nav.next');
+    if (!track) return;
+
+    function update() {
+      var maxScroll = track.scrollWidth - track.clientWidth;
+      if (maxScroll <= 2) {
+        carousel.classList.add('no-overflow');
+        return;
+      }
+      carousel.classList.remove('no-overflow');
+      carousel.classList.toggle('at-start', track.scrollLeft <= 2);
+      carousel.classList.toggle('at-end', track.scrollLeft >= maxScroll - 2);
+    }
+
+    function scrollByCards(direction) {
+      var card = track.querySelector('.testi-video');
+      var step = card ? card.getBoundingClientRect().width + 16 : track.clientWidth * 0.8;
+      track.scrollBy({ left: direction * step * 2, behavior: 'smooth' });
+    }
+
+    if (prev) prev.addEventListener('click', function () { scrollByCards(-1); });
+    if (next) next.addEventListener('click', function () { scrollByCards(1); });
+    track.addEventListener('scroll', update);
+    window.addEventListener('resize', update);
+    update();
+  });
 });
