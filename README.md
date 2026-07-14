@@ -1,11 +1,13 @@
 # ACCTS — "Clinical Clarity" website
 
-A multi-page site for ACCTS, a naturopathic brain-health practice supporting children, adults, and the elderly. Plain HTML + CSS + a little JS — no build step, no framework. Open `index.html` (redirects to `concept-3/index.html`) in a browser and it works.
+A multi-page site for ACCTS, a naturopathic brain-health practice supporting children, adults, and the elderly. Plain HTML + CSS + a little JS — no build step, no framework. Open `index.html` for a chooser linking to the concepts below.
+
+**concept-3 ("Clinical Clarity") is the client-approved final direction and is fully built out.** concept-2 ("Clinic Trust") is kept as a single-page reference mockup for comparison — it is not being developed further.
 
 ## File structure
 
 ```
-concept-3/
+concept-3/  (final direction — full site)
 ├── index.html               Home
 ├── children.html             Brain nutrition for children
 ├── adults.html                Brain nutrition for adults & the ageing brain
