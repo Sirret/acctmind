@@ -1,4 +1,4 @@
-/* Shared concept tab bar — included by every design so you can click between the 7 site concepts. */
+/* Shared concept tab bar — included by every design so you can click between the site concepts. */
 #concept-switcher {
   position: relative;
   z-index: 9999;
