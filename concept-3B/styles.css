@@ -21,6 +21,12 @@
   --on-dark: #FFFFFF;
   --on-dark-soft: #C3CEF2;
 
+  /* Warm coral accent — sparing use (ribbon, highlight moments). --accent-dark
+     is for surfaces carrying white text (buttons, badges): plain --accent is
+     only ~3:1 contrast with white, which fails WCAG AA for normal-size text. */
+  --accent: #E8734A;
+  --accent-dark: #BF5530;
+
   --radius-s: 4px;
   --radius-m: 6px;
   --radius-l: 14px;
@@ -141,6 +147,13 @@ section.on-dark .eyebrow,
   box-shadow: 0 14px 30px -14px rgba(29, 111, 224, 0.6);
 }
 .btn-primary:hover { background: var(--navy-2); transform: translateY(-2px); }
+
+.btn-accent {
+  background: var(--accent-dark);
+  color: var(--on-dark);
+  box-shadow: 0 14px 30px -14px rgba(191, 85, 48, 0.6);
+}
+.btn-accent:hover { background: #A3491F; transform: translateY(-2px); }
 
 .btn-ghost {
   background: transparent;
