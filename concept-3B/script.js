@@ -44,16 +44,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'Escape') closeNav();
   });
 
-  // Contact form: subject dropdown pre-fill via query param (?enquiry=)
-  var params = new URLSearchParams(window.location.search);
-  var enquiry = params.get('enquiry');
-  var select = document.getElementById('enquiry-type');
-  if (enquiry && select) {
-    Array.from(select.options).forEach(function (opt) {
-      if (opt.value === enquiry) select.value = enquiry;
-    });
-  }
-
   // Prevent demo form submissions from navigating away
   document.querySelectorAll('form[data-demo-form]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
@@ -61,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var btn = form.querySelector('button[type="submit"]');
       if (btn) {
         var original = btn.textContent;
-        btn.textContent = 'Message sent';
+        btn.textContent = form.getAttribute('data-success-text') || 'Message sent';
         setTimeout(function () { btn.textContent = original; }, 2500);
       }
     });
